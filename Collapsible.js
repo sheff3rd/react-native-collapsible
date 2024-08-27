@@ -186,9 +186,9 @@ export default class Collapsible extends Component {
       animating,
     } = this.state;
     const hasKnownHeight = !measuring && (measured || collapsed);
-    const style = hasKnownHeight && {
+    const style = {
       overflow: 'hidden',
-      height: height,
+      height: hasKnownHeight ? height : 0,
     };
     const contentStyle = {};
     if (measuring) {
